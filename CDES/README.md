@@ -30,9 +30,9 @@ python train_toy_models.py --number 16 --kernel_size 7 --cuda_index 0 --weight_d
 
 **Generate toy datasets**
 
-$\begin{equation}
+\begin{equation}
     \mathcal{L} = \sum\limits_{k=0}^{H/2-1} || AI_{k}(X^{Conv})-AI_{k}(X^{Target}) ||_{2}^{2} + || X^{(Conv)} -X ||_{2}^{2}
-\end{equation}$
+\end{equation}
 
 ```
 cd SpectralDensity
