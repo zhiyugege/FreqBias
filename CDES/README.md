@@ -1,7 +1,7 @@
 ## Bias Hypothesis Ι : Spectral Density
 
 <div align="center">
-    <img src="/data/yifei/Research/IJCAI-Section4.1/Image/CDES.png" alt="image-20220922143512377" style="zoom:100%;" />
+    <img src="Image/CDES.png" alt="image-20220922143512377" style="zoom:100%;" />
     <p> Convolutional Density Enhancement Strategy (CDES) </p>
 </div>
 
