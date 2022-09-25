@@ -43,25 +43,25 @@ python generate_toy_dataset.py --exp_name SCR --cuda_index 0
 
 **Visualization of SCR-dataset(take class 0 as an example)**
 <div align="center">
-    <img src="/data/yifei/Research/IJCAI-Section4.1/Image/SCR/0.png" alt="image-20220922143512377" style="zoom:100%;" />
+    <img src="Image/SCR/0.png" alt="image-20220922143512377" style="zoom:100%;" />
 </div>
 
 **Visualization of WCR-dataset**
 <div align="center">
-    <img src="/data/yifei/Research/IJCAI-Section4.1/Image/WCR/all.png" alt="image-20220922143512377" style="zoom:100%;" />
+    <img src="Image/WCR/all.png" alt="image-20220922143512377" style="zoom:100%;" />
 </div>
 
 
 ## Feature Discrimination Observations
 
 <div align="center">
-    <img src="/data/yifei/Research/IJCAI-Section4.1/Image/Result.png" alt="image-20220922143512377" style="zoom:100%;" />
+    <img src="Image/Result.png" alt="image-20220922143512377" style="zoom:100%;" />
 </div>
 
 ## Learning Priority Observations
 
 <div align="center">
-    <img src="/data/yifei/Research/IJCAI-Section4.1/Image/Result2.png" alt="image-20220922143512377" style="zoom:100%;" />
+    <img src="Image/Result2.png" alt="image-20220922143512377" style="zoom:100%;" />
 </div>
 
 
