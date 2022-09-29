@@ -1,3 +1,3 @@
 # Investigating and Explaining the Frequency Bias in Image Classiﬁcation
 
-updating
+This paper has been accpeted as IJCAI2022(oral).
