@@ -16,7 +16,7 @@ parser = argparse.ArgumentParser(description='train configs')
 parser.add_argument('--dataset' ,help='the used dataset')
 parser.add_argument('--arch' , default='resnet18', help='the used model')
 parser.add_argument('--freq', default=None, help='frequecy')
-parser.add_argument('--r', default=4, help='radius of frequecy domain')
+parser.add_argument('--r', default=0, help='radius of frequecy domain')
 parser.add_argument('--lr', default=0.1, help='leanring rate')
 parser.add_argument('--epoch', default=200, help='epoch')
 parser.add_argument('--task', default=None, help='expriment id')
@@ -25,7 +25,7 @@ args = parser.parse_args()
 
 # os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 
-DATA_PATH_DICT = {'cifar10': '/data/zhiyu/data','cifar100':'/data/zhiyu/','resIN':'/data/zhiyu/dddd/data/ILSVRC2012/'}
+DATA_PATH_DICT = {'cifar10': '/data/cifar','cifar100':'/data/cifar','resIN':'/data/ILSVRC2012'}
 DATA_NAME_DICT = {'cifar10':'CIFAR', 'cifar100':'CIFAR100','resIN':'RestrictedImageNet'}
 DEVICES_ID = None
 if len(args.gpu)>1: 
