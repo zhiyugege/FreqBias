@@ -1,6 +1,6 @@
 # Investigating and Explaining the Frequency Bias in Image Classiﬁcation [IJCAI-2022,Oral]
 
-## Bias Observations: On Learning Priority
+## Bias Observations On Learning Priority
 
 - Starting with standard traning by `easy_train.py`
 ```
@@ -54,3 +54,51 @@ python generate_toy_dataset.py --exp_name SCR --cuda_index 0
 <div align="center">
     <img src="CDES/Image/WCR/all.png" alt="image-20220922143512377" style="zoom:100%;" />
 </div>
+
+## Bias Hypothesis ΙΙ :  Class Consistency
+
+- Creating the new dataset called HARS-dataset
+```
+cd tools
+python generate_freq_dataset.py
+```
+We use `r=12` in the code to control the mixing radius of low frequency and high frequency of different types of images.
+
+- Training model with HARS-dataset
+```
+python easy_train.py --dataset cifar10 --arch resnet18 --gpu 0 --freq high --r 12
+```
+- Evaluation of model
+```
+python test.py --dataset cifar10 --arch resnet18 --freq low --r 4
+```
+*--freq* (str): The frequency component of image, low or high frequencies.
+
+*--r* (int): The frequency radius of spectrum.
+
+
+For any questions, welcome to contact {**zylin**, **yifeigao**}@bjtu.edu.cn
+
+## References
+
+The code refers to https://github.com/MadryLab/robustness and https://github.com/cc-hpc-itwm/UpConv
+
+## Citation
+
+If you find this repo useful for your research, please consider citing the paper
+```
+@inproceedings{ijcai2022p101,
+  title     = {Investigating and Explaining the Frequency Bias in Image Classification},
+  author    = {Lin, Zhiyu and Gao, Yifei and Sang, Jitao},
+  booktitle = {Proceedings of the Thirty-First International Joint Conference on
+               Artificial Intelligence, {IJCAI-22}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {Lud De Raedt},
+  pages     = {717--723},
+  year      = {2022},
+  month     = {7},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2022/101},
+  url       = {https://doi.org/10.24963/ijcai.2022/101},
+}
+```
