@@ -115,7 +115,7 @@ args = parser.parse_args()
 
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
-DATA_PATH_DICT = {'cifar10': '/data/zhiyu/data','cifar100':'/data/zhiyu/','resIN':'/data/zhiyu/dddd/data/ILSVRC2012/'}
+DATA_PATH_DICT = {'cifar10': '/data/cifar','cifar100':'/data/cifar','resIN':'/data/ILSVRC2012'}
 DATA_NAME_DICT = {'cifar10':'CIFAR', 'cifar100':'CIFAR100','resIN':'RestrictedImageNet'}
 DEVICES_ID = None
 if len(args.gpu)>1: 
