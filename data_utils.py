@@ -37,26 +37,31 @@ def build_dataset(dataset, freq, r):
         transforms.ToTensor()
     ])
     if dataset == 'cifar10':
-        train_dataset = torchvision.datasets.CIFAR10(root='/data/zhiyu/data', train=True, download=False, transform=transform_train)
-        test_dataset = torchvision.datasets.CIFAR10(root='/data/zhiyu/data', train=False, transform=transform_test)
+        train_dataset = torchvision.datasets.CIFAR10(root='/data/cifar', train=True, download=False, transform=transform_train)
+        test_dataset = torchvision.datasets.CIFAR10(root='/data/cifar', train=False, transform=transform_test)
         num_classes = 10
 
     if dataset == 'cifar100':
-        train_dataset = torchvision.datasets.CIFAR100(root='/data/zhiyu', train=True, download=False, transform=transform_train)
-        test_dataset = torchvision.datasets.CIFAR100(root='/data/zhiyu', train=False, transform=transform_test)
+        train_dataset = torchvision.datasets.CIFAR100(root='/data/cifar', train=True, download=False, transform=transform_train)
+        test_dataset = torchvision.datasets.CIFAR100(root='/data/cifar', train=False, transform=transform_test)
         num_classes = 100
    
-    if freq:
-        freq_file = '/data/zhiyu/research/f_exp/data/'+dataset+'/dft/hybrid_'+freq+'_'+str(r)+'.npy'
-        label_file = '/data/zhiyu/research/f_exp/data/'+dataset+'/train_label.npy'
-        # freq_file = '/data/zhiyu/data/CIFAR10/dft/test_data_'+freq+'_'+str(r)+'.npy'
-        # label_file = '/data/zhiyu/data/CIFAR10/dft/test_label.npy'
+    if r:
+        freq_file = '/data/'+dataset+'/hybrid_high_'+str(r)+'.npy'
+        label_file = '/data/'+dataset+'/train_label.npy'
         print('loading frequency image file from '+freq_file)
         print('loading frequency label file from '+label_file)
         freq_data, freq_label = read_freq_file(freq_file,label_file)
         train_dataset.data = freq_data
         train_dataset.targets = freq_label
-        return train_dataset, test_dataset
+    if freq:
+        freq_file = '/data/'+dataset+'/dft/test_data_'+freq+'_'+str(r)+'.npy'
+        label_file = '/data/'+dataset+'/dft/test_label.npy'
+        print('loading frequency image file from '+freq_file)
+        print('loading frequency label file from '+label_file)
+        freq_data, freq_label = read_freq_file(freq_file,label_file)
+        test_dataset.data = freq_data
+        test_dataset.targets = freq_label
         
     return train_dataset, test_dataset
     
