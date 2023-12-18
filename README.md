@@ -61,6 +61,13 @@ python generate_toy_dataset.py --exp_name SCR --cuda_index 0
 
 ## Bias Hypothesis ΙΙ :  Class Consistency
 
+<div align="center">
+    <img src="CDES/Image/hars.jpg" alt="image-20220922143512377" style="zoom:100%;" />
+    <p> Process of building HARS-dataset </p>
+</div>
+
+**Hypothesize**: We hypothesize that the model only pick up the frequency components with the property of class consistency. For example, if we break up the class consistency on LFC, model will pay more attention to employing HFC. In order to verify this hypothesis, we construct another variant dataset of CIFAR-10 called HARS-dataset
+
 - Creating the new dataset called HARS-dataset
 ```
 cd tools
