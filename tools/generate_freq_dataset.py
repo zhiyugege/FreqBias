@@ -71,8 +71,8 @@ def generate_different_dct(Images, r):
 
 
 # cifar10
-data = np.load('/data/zhiyu/data/CIFAR10/train_data.npy') # 50000*32*32*3
-label = np.load('/data/zhiyu/data/CIFAR10/train_label.npy') # 50000
+data = np.load('/data/CIFAR10/train_data.npy') # 50000*32*32*3
+label = np.load('/data/CIFAR10/train_label.npy') # 50000
 print(data.shape)
 print(label.shape)
 r = 12
@@ -119,3 +119,5 @@ for i in tqdm(range(len(label))):
 multi_data = np.array(multi_data)
 print(multi_data.shape)
 print('ok')
+np.save("hybrid_high_12.npy", multi_data)
+np.save("train_label.npy", label)
