@@ -1,4 +1,8 @@
-# Investigating and Explaining the Frequency Bias in Image Classiﬁcation [IJCAI-2022,Oral]
+# [Investigating and Explaining the Frequency Bias in Image Classiﬁcation](https://github.com/zhiyugege/FreqBias) [IJCAI-2022,Oral]
+
+- [Paper link](https://www.ijcai.org/proceedings/2022/0101.pdf)
+
+- If you have any questions about the paper or code, please [contact us](zyllin@bjtu.edu.cn)
 
 ## Bias Observations On Learning Priority
 
@@ -66,7 +70,7 @@ We use `r=12` in the code to control the mixing radius of low frequency and high
 
 - Training model with HARS-dataset
 ```
-python easy_train.py --dataset cifar10 --arch resnet18 --gpu 0 --freq high --r 12
+python easy_train.py --dataset cifar10 --arch resnet18 --gpu 0 --r 12
 ```
 - Evaluation of model
 ```
