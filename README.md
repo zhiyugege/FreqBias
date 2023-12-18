@@ -88,8 +88,6 @@ python test.py --dataset cifar10 --arch resnet18 --freq low --r 4
 *--r* (int): The frequency radius of spectrum.
 
 
-For any questions, welcome to contact {**zylin**, **yifeigao**}@bjtu.edu.cn
-
 ## References
 
 The code refers to https://github.com/MadryLab/robustness and https://github.com/cc-hpc-itwm/UpConv
