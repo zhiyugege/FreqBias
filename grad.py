@@ -16,6 +16,9 @@ from tqdm import tqdm
 from data_utils import *
 from scipy.spatial.distance import pdist, squareform
 import random
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 def azimuthalAverage(image, center=None):
    
     y, x = np.indices(image.shape)
@@ -162,4 +165,26 @@ grad_save['std'] = np.array(grad_save['std'])
 
 np.save('/data/zhiyu/research/imRecog/grad/imagenet/resnet50_inp_grad_power_epo100',grad_save)
 
+mean_grad = grad_save['mean']
+_mean_grad = (mean_grad-np.min(mean_grad))/(np.max(mean_grad)-np.min(mean_grad))
+
+plt.figure(figsize=(10,8),dpi=200)
+xticklabels = [0, 4, 9, 14, 19]
+xticks, idx = [], 0
+for i in range(20):
+    if xticklabels[idx] == i:
+        xticks.append(i)
+        idx += 1
+    else:
+        xticks.append(' ')
+ax = sns.heatmap(_mean_grad,annot=False,cbar=True,vmin=0, vmax=1,yticklabels=yticks, xticklabels=xticks) 
+ax.invert_yaxis()
+cbar = ax.collections[0].colorbar
+cbar.set_ticks([0, 1])
+cbar.ax.set_yticklabels(['0.0', '1.0'], size=30)
+cbar.ax.tick_params(labelsize=25)
+plt.xlabel('Frequency bands', fontsize=30)
+plt.ylabel('Training epochs', fontsize=30)
+plt.tick_params(labelsize=30)  
+plt.show()
 
