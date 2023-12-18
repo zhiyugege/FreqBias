@@ -19,7 +19,7 @@ python grad.py --dataset cifar10 --arch resnet18 --gpu 0
 ## Bias Hypothesis Ι : Spectral Density
 
 <div align="center">
-    <img src="CDES/Image/CDES.png" alt="image-20220922143512377" style="zoom:100%;" />
+    <img src="CDES/Image/cdes.jpg" alt="image-20220922143512377" style="zoom:100%;" />
     <p> Convolutional Density Enhancement Strategy (CDES) </p>
 </div>
 
